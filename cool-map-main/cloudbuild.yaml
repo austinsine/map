@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/cool-map:latest', '-t', 'gcr.io/$PROJECT_ID/cool-map:$COMMIT_SHA', '-t', 'gcr.io/$PROJECT_ID/cool-map:$BUILD_ID', '.']
+  id: 'build-image-cool-map'
+  waitFor: ['-']
+images: 
+- 'gcr.io/$PROJECT_ID/cool-map:latest'
+- 'gcr.io/$PROJECT_ID/cool-map:$COMMIT_SHA'
+- 'gcr.io/$PROJECT_ID/cool-map:$BUILD_ID
