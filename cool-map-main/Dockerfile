@@ -1,8 +1,8 @@
 FROM python:3.10-slim
 
-ENV APP_HOME /app
+ENV APP_HOME /cool-map-main
 WORKDIR $APP_HOME
-COPY ./app ./
+COPY ./cool-map-main ./
 COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
